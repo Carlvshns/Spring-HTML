@@ -53,7 +53,6 @@ public class UsuarioController {
 	public ModelAndView cadastrar(Usuario usuario) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		usuarioService.salvarusuario(usuario);
-		new ResponseEntity<>(HttpStatus.CREATED);
 		mv.setViewName("redirect:/");
 		return mv;
 	}
@@ -65,7 +64,6 @@ public class UsuarioController {
 		Usuario userLogin = usuarioService.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
 		if(userLogin == null) {
 			mv.addObject("msg", "Usuario não encontrado. Tente novamente");
-			new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
 			mv = login();
 		}else {
 			session.setAttribute("usuarioLogado", userLogin);
