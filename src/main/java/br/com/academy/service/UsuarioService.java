@@ -2,7 +2,6 @@ package br.com.academy.service;
 
 import java.security.NoSuchAlgorithmException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.academy.Exceptions.CriptoExistsException;
@@ -15,10 +14,12 @@ import br.com.academy.util.Util;
 @Service
 public class UsuarioService {
 	
-	@Autowired
+
 	private UsuarioRepositorio usuarioRepositorio;
 
-	
+	public UsuarioService(UsuarioRepositorio usuarioRepositorio){
+		this.usuarioRepositorio = usuarioRepositorio;
+	}
 	
 	public void salvarusuario(Usuario user) throws Exception {
 		try {
