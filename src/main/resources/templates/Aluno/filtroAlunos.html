@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="hhtp://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+<link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<title>Encontrar Alunos</title>
+<meta name="author" content="Carlos Souza"/>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<div class="container" style="margin-top: 50px;">
+	
+	<h5>Encontrar Alunos</h5>
+	<hr>
+	<br>
+	
+		<form method="post" action="pesquisar-aluno" th:object="${aluno}">
+		
+			<div class="input-group col-6 offset-3">
+				<input type="text" class="form-control" placeholder="Busque por o nome do aluno..." th:field="*{nome}">
+				<div id="pesquisar"class="input-group-apend"><button type="submit" class="btn btn-outline-secondary" style="width: auto; color: black; height: auto; border: solid 1px blue; padding: 6px; border-radius: 2px;">Pesquisar</button>
+				</div>
+			</div>
+		</form>
+				<br>
+	<hr>
+	  <!-- Alunos ativos -->
+		<div class="row">
+			<div class="card" style="width: 270px">
+				<a th:href="@{/alunos-ativos}">
+				<img class="card-img-top" src="img/Alunos-Ativos.jpeg" style="width: 268px; height: 178.66px"/>
+				</a>
+			<div class="card-body">
+				<h5 class="card-title">Alunos que continuam Ativos no Sistema</h5>
+				<p class="card-text">Busque por todos os alunos que estão ativos no sistema.</p>
+				<a th:href="@{/alunos-ativos}" class="btn btn-outline-primary" style="width: auto; border-color: blue; color: black;">Clique aqui!</a>
+			</div>
+			</div>
+			
+		<!-- Alunos inativos -->
+		
+		<div class="card ml-3" style="width: 270px">
+				<a th:href="@{/alunos-inativos}">
+				<img class="card-img-top" src="img/Alunos-Inativos.jpeg"/>
+				</a>
+			<div class="card-body">
+				<h5 class="card-title">Alunos Inativos no Sistema</h5>
+				<p class="card-text">Busque por todos os alunos que estão inativos no sistema.</p>
+				<a th:href="@{/alunos-inativos}" class="btn btn-outline-primary" style="width: auto; border-color: blue; color: black;">Clique aqui!</a>
+			</div>
+			</div>
+			
+		<!-- Alunos cancelados  -->
+		
+		<div class="card ml-3" style="width: 270px">
+				<a th:href="@{/alunos-cancelados}">
+				<img class="card-img-top" src="img/Alunos-Cancelados.jpg" style="width: 268px; height: 178.66px"/>
+				</a>
+			<div class="card-body">
+				<h5 class="card-title">Alunos <span style="color: red;">CANCELADOS</span> no Sistema</h5>
+				<p class="card-text">Busque por todos os alunos que estão cancelados no sistema.</p>
+				<a th:href="@{/alunos-cancelados}" class="btn btn-outline-primary" style="width: auto; border-color: blue; color: black;">Clique aqui!</a>
+			</div>
+			</div>
+			
+			<!-- Alunos trancados -->
+			
+			<div class="card ml-3" style="width: 270px">
+			<a th:href="@{/alunos-trancados}">
+				<img class="card-img-top" src="img/Alunos-Trancados.jpeg" style="width: 268px; height: 178.66px"/>
+				</a>
+			<div class="card-body">
+				<h5 class="card-title">Alunos TRANCADOS no Sistema</h5>
+				<p class="card-text">Busque por todos os alunos que estão trancados no sistema.</p>
+				<a th:href="@{/alunos-trancados}" class="btn btn-outline-primary" style="width: auto; border-color: blue; color: black;">Clique aqui!</a>
+			</div>
+			</div>
+			
+		</div>
+	
+	</div>
+	
+	<div class="modal fade" id="modalPesquisa">
+       		<div class="modal-dialog modal-lg">
+       			<div class="modal-content">
+       				<div class="modal-header">
+       					
+       					<h5 class="modal-title">Encontre um aluno</h5>
+       					<button type="button" class="close" data-dismiss="modal">
+       						<span>&times;</span>
+       					</button>
+       				</div>
+       				
+       				<form method="post" action="pesquisar-aluno" th:object="${aluno}">
+       				
+       					<div class="modal-body">
+       						<input type="text" placeholder="Digite o nome do aluno" th:field="*{nome}" class="form-control">
+       					</div>
+       					<div class="modal-footer">
+       						<button class="btn btn-danger" data-dismiss="modal" style="width: auto; padding: 7px; border: none; border-radius: 2px;">Fechar</button>
+       						<button type="submit" class="btn btn-success" style="width: auto; padding: 7px; border: none; border-radius: 2px;">Pesquisar</button>
+       					</div>
+       				</form>
+       			</div>
+       		</div>
+       	</div>
+       				
+
+</body>
+</html>

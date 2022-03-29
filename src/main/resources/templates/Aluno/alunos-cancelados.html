@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="hhtp://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+<link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<title>Lista alunos cancelados</title>
+<meta name="author" content="Carlos Souza"/>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<div class="container" style="margin-top: 50px;">
+	
+	<h3>Somente alunos ativos</h3>
+	<hr>
+	<table class="table table-bordered table-hover">
+	
+	<thead>
+		<th scope="col">Nome</th>
+		<th scope="col">Curso</th>
+		<th scope="col">Matricula</th>
+		<th scope="col">Status</th>
+		<th scope="col">Turno</th>
+		<th scope="col">Acao</th>	
+	</thead>
+	<tbody>
+		<tr scope="row" th:each="alunos : ${alunosCancelados}">
+		
+			<td th:text="${alunos.nome}"></td>
+			<td th:text="${alunos.curso}"></td>
+			<td th:text="${alunos.matricula}"></td>
+			<td th:text="${alunos.status}"></td>
+			<td th:text="${alunos.turno}"></td>
+			
+			<td>
+			
+			<a class="btn btn-primary button-PageList" th:href="@{alterar/{id}(id=${alunos.id})}">
+			
+			<i class="fa fa-edit"></i>Editar</a>
+			
+			<a class="btn btn-danger button-PageList" th:href="@{excluir/{id}(id=${alunos.id})}">
+			
+			<i class="fa fa-times"></i>Excluir</a>
+			
+			</td>
+		
+		</tr>
+	
+	</tbody>
+	</table>
+	</div>
+
+</body>
+</html>

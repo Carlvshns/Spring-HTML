@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="hhtp://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+<link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<title>Project Academy - Cadastro</title>
+<meta name="author" content="Carlos Souza"/>
+<link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+		
+	<div class="Login-Form">
+		<div class="container">
+			<div class="main-div">
+				<div class="texto-header">
+					<h2>Cadastro de usuario</h2>
+					<p>Crie seu usuario no Sistema</p>
+				</div>
+				
+				<form method="post" action="salvarUsuario" th:object="${usuario}">
+					<div class="form-group">
+						<input class="form-control" th:field="*{email}" placeholder="Digite seu email" required/>
+					</div>
+					
+					<div class="form-group">
+						<input type="text" class="form-control" th:field="*{user}" placeholder="Username" required minlength="4"/>
+					</div>
+					
+					<div class="form-group">
+						<input type="password" class="form-control" th:field="*{senha}" placeholder="Insira sua senha" required minlength="4"/>
+					</div> 
+					
+					<button type="submit" class="btn btn-primary">Cadastrar</button>
+					<button type="button" class="btn btn-info"><a th:href="@{Login/login}" style="color: #fff"> Voltar</a></button>
+				</form>
+			</div>
+		</div>
+	</div>
+		
+</body>
+</html>

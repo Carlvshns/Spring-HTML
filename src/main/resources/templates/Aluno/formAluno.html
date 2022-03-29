@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="hhtp://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+<link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<title>Inserir Aluno</title>
+<meta name="author" content="Carlos Souza"/>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<div class="container" style="margin-top: 50px; margin-left: 153px;">
+	
+	<h5>+ Inserir Aluno</h5>
+	<hr>
+	<br>
+	
+	<form method="post" action="/InsertAlunos" th:object="${aluno}" autocomplete="off">
+	
+	<!-- Campo nome do aluno -->
+		
+		<div class="row">
+			<div class="col-md-5 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nome')}">
+			<label class="validation-message" th:errors="*{nome}"></label>
+		
+			</div>
+				<label>Nome do aluno:</label>
+				<input class="form-control" placeholder="Ex: Catiele Silva" th:field="*{nome}" required minlenght="14" /> 
+			</div>
+		</div>
+		
+	<!-- Campo turno -->
+	
+		<div class="row">
+			<div class="col-md-5 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('turno')}">
+				<label class="validation-message" th:errors="*{turno}"></label>
+		
+				</div>
+				<label>Turno:</label>
+				<select class="form-control" th:field="*{turno}">
+					<option th:each="turno : ${T(br.com.academy.Enums.Turno).values()}"
+					th:value="${turno}" th:text="${turno}"></option> 
+				</select>
+			</div>
+		</div>
+		
+	<!-- Campo curso -->
+		
+		<div class="row">
+			<div class="col-md-5 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('curso')}">
+			<label class="validation-message" th:errors="*{curso}"></label>
+		
+			</div>
+				<label>Selecione o curso:</label>
+				<select class="form-control" th:field="*{curso}">
+					<option th:each="curso : ${T(br.com.academy.Enums.Curso).values()}"
+					th:value="${curso}" th:text="${curso}"></option> 
+				</select>
+			</div>
+		</div>
+		
+	<!-- Campo matricula -->
+		
+		<div class="row">
+			<div class="col-md-5 form-group offset-md-3">
+			<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('matricula')}">
+			<label class="validation-message" th:errors="*{matricula}"></label>
+		
+			</div>
+				<label>Gerar Matricula:</label>
+				<input class="form-control" id="matricula" th:field="*{matricula}" required>
+				<button type="button" onclick="GerarMatricula();" class="btn btn-dark" style="margin-top: 10px; width: auto; border: 0px;">Gerar</button>
+			</div>
+		</div>	
+		
+	<!-- Status do aluno -->		
+		
+		<div class="row">
+			<div class="col-md-5 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('status')}">
+				<label class="validation-message" th:errors="*{status}"></label>
+		
+				</div>
+				<label>Status:</label>
+				<select class="form-control" th:field="*{status}">
+					<option th:each="status : ${T(br.com.academy.Enums.Status).values()}"
+					th:value="${status}" th:text="${status}"></option> 
+				</select>
+			</div>
+		</div> 
+		
+	<!-- Campo de salvamento -->
+		
+		<div class="row offset-md-3" style="width: 445px;">
+			<button type="submit" class="btn btn-success" style="width: 150px; border: solid 1px; margin: 0 auto;">SALVAR</button>
+			&nbsp;&nbsp;
+			<button th:href="@{/index}" class="btn btn-outline-danger" style="width: 150px; border: solid 1px; margin: 0 auto; background-color: red;">VOLTAR</button>
+		</div>
+	
+	</form>
+	
+	</div>
+	
+	<div class="modal fade" id="modalPesquisa">
+       		<div class="modal-dialog modal-lg">
+       			<div class="modal-content">
+       				<div class="modal-header">
+       					
+       					<h5 class="modal-title">Encontre um aluno</h5>
+       					<button type="button" class="close" data-dismiss="modal">
+       						<span>&times;</span>
+       					</button>
+       				</div>
+       				
+       				<form method="post" action="pesquisar-aluno" th:object="${aluno}">
+       				
+       					<div class="modal-body">
+       						<input type="text" placeholder="Digite o nome do aluno" th:field="*{nome}" class="form-control">
+       					</div>
+       					<div class="modal-footer">
+       						<button class="btn btn-danger" data-dismiss="modal" style="width: auto; padding: 7px; border: none; border-radius: 2px;">Fechar</button>
+       						<button type="submit" class="btn btn-success" style="width: auto; padding: 7px; border: none; border-radius: 2px;">Pesquisar</button>
+       					</div>
+       				
+       				</form>
+       				
+       			</div>
+       		</div>
+       </div>
+
+</body>
+</html>
