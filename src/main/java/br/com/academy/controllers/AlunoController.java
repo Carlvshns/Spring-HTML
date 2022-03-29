@@ -26,6 +26,14 @@ public class AlunoController {
 	public AlunoController(AlunoService alunoService){
 		this.alunoService = alunoService;
 	}
+
+	@GetMapping("/")
+	public ModelAndView index() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("home/index");
+		mv.addObject("aluno", new Aluno());
+		return mv;
+	}
 	
 	@GetMapping("/inserirAlunos")
 	public ModelAndView InsertAlunos(Aluno aluno) {
