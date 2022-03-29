@@ -49,7 +49,7 @@ public class UsuarioController {
 		mv.setViewName("Login/cadastro");
 		return mv;
 	}
-	@PostMapping("salvarUsuario")
+	@PostMapping("/salvarUsuario")
 	public ModelAndView cadastrar(Usuario usuario) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		usuarioService.salvarusuario(usuario);

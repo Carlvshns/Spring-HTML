@@ -22,7 +22,7 @@
 					<p>Crie seu usuario no Sistema</p>
 				</div>
 				
-				<form method="post" action="salvarUsuario" th:object="${usuario}">
+				<form method="post" action="/salvarUsuario" th:object="${usuario}">
 					<div class="form-group">
 						<input class="form-control" th:field="*{email}" placeholder="Digite seu email" required/>
 					</div>
