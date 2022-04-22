@@ -27,7 +27,7 @@
 		
 			<div class="input-group col-6 offset-3">
 				<input type="text" class="form-control" placeholder="Busque por o nome do aluno..." th:field="*{nome}">
-				<div id="pesquisar"class="input-group-apend"><button type="submit" class="btn btn-outline-secondary" style="width: auto; color: black; height: auto; border: solid 1px blue; padding: 6px; border-radius: 2px;">Pesquisar</button>
+				<div id="pesquisar"class="input-group-apend"><button type="submit" id="pesquisar-filtro" class="btn btn-outline-secondary">Pesquisar</button>
 				</div>
 			</div>
 		</form>
@@ -35,9 +35,9 @@
 	<hr>
 	  <!-- Alunos ativos -->
 		<div class="row">
-			<div class="card" style="width: 270px">
+			<div class="card">
 				<a th:href="@{/alunos-ativos}">
-				<img class="card-img-top" src="img/Alunos-Ativos.jpeg" style="width: 268px; height: 178.66px"/>
+				<img class="card-img-top" src="img/Alunos-Ativos.jpeg"/>
 				</a>
 			<div class="card-body">
 				<h5 class="card-title">Alunos que continuam Ativos no Sistema</h5>
@@ -48,7 +48,7 @@
 			
 		<!-- Alunos inativos -->
 		
-		<div class="card ml-3" style="width: 270px">
+		<div class="card">
 				<a th:href="@{/alunos-inativos}">
 				<img class="card-img-top" src="img/Alunos-Inativos.jpeg"/>
 				</a>
@@ -61,9 +61,9 @@
 			
 		<!-- Alunos cancelados  -->
 		
-		<div class="card ml-3" style="width: 270px">
+		<div class="card">
 				<a th:href="@{/alunos-cancelados}">
-				<img class="card-img-top" src="img/Alunos-Cancelados.jpg" style="width: 268px; height: 178.66px"/>
+				<img class="card-img-top" src="img/Alunos-Cancelados.jpg"/>
 				</a>
 			<div class="card-body">
 				<h5 class="card-title">Alunos <span style="color: red;">CANCELADOS</span> no Sistema</h5>
@@ -74,9 +74,9 @@
 			
 			<!-- Alunos trancados -->
 			
-			<div class="card ml-3" style="width: 270px">
+			<div class="card">
 			<a th:href="@{/alunos-trancados}">
-				<img class="card-img-top" src="img/Alunos-Trancados.jpeg" style="width: 268px; height: 178.66px"/>
+				<img class="card-img-top" src="img/Alunos-Trancados.jpeg"/>
 				</a>
 			<div class="card-body">
 				<h5 class="card-title">Alunos TRANCADOS no Sistema</h5>
