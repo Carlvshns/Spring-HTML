@@ -20,7 +20,7 @@
 	
 	<h3>Ultimos Alunos Adicionados</h3>
 	<hr>
-	<table class="table table-bordered table-hover">
+	<table class="table table-bordered table-hover tableInList">
 	
 	<thead>
 		<th scope="col">Nome</th>
@@ -41,13 +41,13 @@
 			
 			<td>
 			
-			<a class="btn btn-primary button-PageList" th:href="@{alterar/{id}(id=${alunos.id})}">
+			<a class="btn btn-primary button-pesquisa" th:href="@{alterar/{id}(id=${alunos.id})}">
 			
-			<i class="fa fa-edit"></i>Editar</a>
+			<i class="fa fa-edit"></i>&nbsp;Editar</a>
 			
-			<a class="btn btn-danger button-PageList" th:href="@{excluir/{id}(id=${alunos.id})}">
+			<a class="btn btn-danger button-pesquisa" th:href="@{excluir/{id}(id=${alunos.id})}">
 			
-			<i class="fa fa-times"></i>Excluir</a>
+			<i class="fa fa-times"></i>&nbsp;Excluir</a>
 			
 			</td>
 		
