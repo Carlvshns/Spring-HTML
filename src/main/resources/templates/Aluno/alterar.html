@@ -15,11 +15,28 @@
 
 <body>
 
-	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	<header>
+       
+		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #a02790">
+				<a class="navbar-brand" href="https://github.com/Carlvshns/Spring-HTML" target="_blank">
+					<img src="/img/logo_header-site.png" width="60px" height="60px" style="margin: 15px"/>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div class="navbar-collapse collapse justify-content-end" id="navMobile">
+				
+					<a class="btn-nav nav-item nav-link" th:href="@{/}"><i class="fa fa-home"></i> Inicio</a>
+				</div>
+				 
+		</nav> 
+		
+		</header>
 	
-	<div class="container" style="margin-top: 50px; margin-left: 153px;">
+	<div class="container">
 	
-	<h5>Editar Aluno</h5>
+	<h5 class="formOrEdit">Editar Aluno</h5>
 	<hr>
 	<br>
 	
@@ -27,7 +44,7 @@
 	<input type="hidden" th:field="*{id}">
 	<!-- Campo nome do aluno -->
 		
-		<div class="row">
+		<div class="rows">
 			<div class="col-md-5 form-group offset-md-3">
 				<label>Nome aluno:</label>
 				<input class="form-control" placeholder="Ex: Catiele Silva" th:field="*{nome}" minlenght="14"> 
@@ -36,7 +53,7 @@
 		
 	<!-- Campo turno -->
 	
-		<div class="row">
+		<div class="rows">
 			<div class="col-md-5 form-group offset-md-3">
 				<label>Turno:</label>
 				<select class="form-control" th:field="*{turno}">
@@ -48,7 +65,7 @@
 		
 	<!-- Campo disciplina -->
 		
-		<div class="row">
+		<div class="rows">
 			<div class="col-md-5 form-group offset-md-3">
 				<label>Selecione o curso:</label>
 				<select class="form-control" th:field="*{curso}">
@@ -60,7 +77,7 @@
 		
 	<!-- Campo matricula -->
 		
-		<div class="row">
+		<div class="rows">
 			<div class="col-md-5 form-group offset-md-3">
 				<label>Gerar Matricula:</label>
 				<input readonly="readonly" class="form-control" id="matricula" th:field="*{matricula}">
@@ -70,7 +87,7 @@
 		
 	<!-- Status do aluno -->		
 		
-		<div class="row">
+		<div class="rows">
 			<div class="col-md-5 form-group offset-md-3">
 				<label>Status:</label>
 				<select class="form-control" th:field="*{status}">
@@ -82,10 +99,10 @@
 		
 	<!-- Campo de salvamento -->
 		
-		<div class="row offset-md-3">
-			<button type="submit" class="btn btn-success saveButton">SAVE</button>
+		<div class="rows">
+			<button type="submit" class="btn btn-success saveButton">SALVAR</button>
 			&nbsp;&nbsp;
-			<a class="btn btn-outline-danger backButton" th:href="@{/alunos-adicionados}">BACK</a>
+			<a class="btn btn-outline-danger backButton" th:href="@{/alunos-adicionados}">VOLTAR</a>
 		</div>
 	
 	</form>

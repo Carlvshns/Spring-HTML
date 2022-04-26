@@ -69,6 +69,9 @@ a:visited{
 .backButton{
 	width: 150px; border: solid 1px; background-color: #ff0000; margin-bottom: 2px;
 }
+.formOrEdit{
+	margin-top: 5px;
+}
 
 /*Responsave */
 
@@ -77,4 +80,109 @@ a:visited{
 	.wm{width: 100%;}
 	nav{height: 100%;}
 	.neo-container{margin-top: 120px}
+}
+
+@media screen and (min-width: 425px){
+	.button-pesquisa{margin-bottom: 2px; padding: 10px; font-size: 7px;}
+	.saveButton{width: 150px; border: solid 1px; margin-left: 38px; margin-bottom: 2px;}
+	.backButton{width: 150px; border: solid 1px; background-color: #ff0000; margin-bottom: 2px;}
+	.tableInList{font-size: 7px; margin-left: -10px;}
+	.rows{width: 410px;}
+}
+@media screen and (min-width: 480px){
+	.card{margin-left: 105px;}
+	.button-pesquisa{margin-bottom: 2px; padding: 10px; font-size: 8px;}
+	.saveButton{width: 150px; border: solid 1px; margin-left: 55px; margin-bottom: 2px;}
+	.tableInList{font-size: 8px; margin-left: 0px;}
+	.rows{width: 425px;}
+}
+@media screen and (min-width: 640px){
+	.card{margin-left: 137px;}
+	.saveButton{width: 150px; border: solid 1px; margin-left: 90px; margin-bottom: 2px;}
+	.rows{width: 470px;}
+}
+@media screen and (min-width: 720px){
+	.card{margin-left: 2px; float: left;}
+	.button-pesquisa{margin-bottom: 2px; padding: 10px; font-size: 8px; font-size: 11px;}
+	.row{width: 546px;}
+	.saveButton{width: 150px; border: solid 1px; margin-left: 92px; margin-bottom: 2px;}
+	.tableInList{font-size: 11px; margin-left: 0px;}
+}
+@media screen and (min-width: 768px){
+	.card{margin-left: 15px; float: left; margin-bottom: 10px}
+	.rows{width: 720px;}
+	.saveButton{width: 150px; border: solid 1px; margin-left: 169px; margin-bottom: 2px;}
+}
+@media screen and (min-width: 1080px){
+	.card{margin-left: 2px; float: left; width: 238px}
+	.button-pesquisa{margin-bottom: 2px; padding: 10px; font-size: 8px; font-size: 15px;}
+	.rows{width: 960px; margin-left: 15px;}
+	.row{width: 960px; margin-left: -15px;}
+	.card-img-top{
+		width: 236px; 
+		height: 178.66px;
+	}
+	.saveButton{width: 150px; border: solid 1px; margin-left: 295px; margin-bottom: 2px;}
+	.tableInList{font-size: 15px; margin-left: 0px;}
+}
+@media screen and (min-width: 1280px){
+	.card{margin-left: 2px; float: left; width: 268px}
+	.rows{width: 1080px; margin-left: 55px;}
+	.row{width: 1080px; margin-left: 13px}
+	.card-img-top{
+		width: 266px; 
+		height: 178.66px;
+	}
+	.card-text{height: 72px}
+	.saveButton{width: 150px; border: solid 1px; margin-left: 335px; margin-bottom: 2px;}
+}
+@media screen and (min-width: 1320px){
+	.row{width: 1080px; margin-left: 20px; margin-right: 0px;}
+	.rows{width: 1100px; margin-left: 55px;}
+	.card{
+		margin-bottom: 5px;
+		width: 260px;
+		margin-left: 4px;
+	}
+	.card-img-top{
+		width: 258px; 
+		height: 178.66px
+	}
+	.fieldSave{align-items: center;}
+}
+@media screen and (min-width: 1440px){
+	.card{margin-left: 2px; float: left; width: 268px}
+	.row{width: 1080px; margin-left: 15px; margin-right: 0px;}
+	.card-img-top{
+		width: 266px; 
+		height: 178.66px;
+	}
+	.card-text{height: 72px}
+}
+@media screen and (min-width: 1920px){
+	.card{margin-left: 2px; float: left; width: 268px}
+	.row{width: 1080px; margin-left: 15px; margin-right: 0px;}
+	.card-img-top{
+		width: 266px; 
+		height: 178.66px;
+	}
+	.card-text{height: 72px}
+}
+@media screen and (min-width: 2160px){
+	.card{margin-left: 2px; float: left; width: 268px}
+	.row{width: 1080px; margin-left: 15px; margin-right: 0px;}
+	.card-img-top{
+		width: 266px; 
+		height: 178.66px;
+	}
+	.card-text{height: 72px}
+}
+@media screen and (min-width: 3840px){
+	.card{margin-left: 2px; float: left; width: 268px}
+	.row{width: 1080px; margin-left: 15px; margin-right: 0px;}
+	.card-img-top{
+		width: 266px; 
+		height: 178.66px;
+	}
+	.card-text{height: 72px}
 }
