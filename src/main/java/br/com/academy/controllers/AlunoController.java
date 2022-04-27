@@ -71,7 +71,7 @@ public class AlunoController {
 	public ModelAndView alterar(@PathVariable("id") Integer id){
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Aluno/alterar");
-		Aluno aluno = alunoService.getById(id);
+		Aluno aluno = alunoService.findById(id);
 		mv.addObject("aluno", aluno);
 		new ResponseEntity<>(HttpStatus.OK);
 		return mv;

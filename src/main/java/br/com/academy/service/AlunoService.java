@@ -25,10 +25,6 @@ public class AlunoService {
         return alunoRepositorio.findById(id).get();
     }
 
-    public Aluno getById(Integer id){
-        return alunoRepositorio.getById(id);
-    }
-
     public void delete(Integer id){
         alunoRepositorio.deleteById(findById(id).getId());
     }
