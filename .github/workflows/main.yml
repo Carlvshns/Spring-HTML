@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - uses: AkhileshNS/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.e42114e4-35cd-45cf-a433-82f4d682c918}}
           heroku_app_name: "springboot-html" #Must be unique in Heroku
