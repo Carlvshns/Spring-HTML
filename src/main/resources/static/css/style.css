@@ -98,11 +98,22 @@ body{
 /*Responsave */
 
 @media screen and (max-width: 800px){
-	
 	.wm{width: 100%;}
 	nav{height: 100%;}
 	.neo-container{margin-top: 120px;}
 	#botaoSair{ margin-left: 15px;}
+}
+
+@media screen and (max-width: 400px){
+	.card{
+		margin-left: 60px;
+	}
+	.btn{width: auto;}
+	.button-pesquisa{margin-bottom: 2px; padding: 10px; font-size: 7px;}
+	.saveButton{width: 150px; border: solid 1px; margin-left: 38px; margin-bottom: 2px;}
+	.backButton{width: 150px; border: solid 1px; background-color: #ff0000; margin-bottom: 2px;}
+	.tableInList{font-size: 7px; margin-left: -12.5px;}
+	.rows{width: 390px;}
 }
 @media screen and (min-width: 425px){
 	.button-pesquisa{margin-bottom: 2px; padding: 10px; font-size: 7px;}
@@ -133,9 +144,10 @@ body{
 	.tableInList{font-size: 11px; margin-left: 0px;}
 }
 @media screen and (min-width: 768px){
-	.card{margin-left: 15px; float: left; margin-bottom: 10px}
+	.card{margin-left: 2px; float: left; margin-bottom: 2px}
 	.container{margin-left: 24px;}
 	.rows{width: 720px;}
+	.row{margin-left: 70px;}
 	.saveButton{width: 150px; border: solid 1px; margin-left: 170px; margin-bottom: 2px;}
 }
 @media screen and (min-width: 1080px){
