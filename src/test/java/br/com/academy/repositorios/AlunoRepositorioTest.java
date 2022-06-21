@@ -23,7 +23,7 @@ public class AlunoRepositorioTest {
 
     @Test
     @DisplayName("Salva um Aluno no banco de dados quando bem sucedido")
-    void save_AlunoESalvo_QuandoBemSucedido(){
+    void save_SalvaAluno_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoParaSalvar();
         
         Aluno alunoSalvo = this.alunoRepositorio.save(alunoParaSalvar);
@@ -36,8 +36,8 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Procura e retorna uma lista de todos alunos no banco de dados quando bem sucedido")
-    void findAll_RetornaListaDeAlunos_QuandoBemSucedido(){
+    @DisplayName("Procura e retorna uma lista de todos Alunos no banco de dados quando bem sucedido")
+    void findAll_RetornaListaDeTodosAlunos_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoParaSalvar();
         
         this.alunoRepositorio.save(alunoParaSalvar);
@@ -50,8 +50,8 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Procura e retorna um aluno vindo do banco de dados baseando-se no seu ID quando bem sucedido")
-    void findById_RetornaAlunoComBaseNoID_QuandoBemSucedido(){
+    @DisplayName("Procura e retorna um Aluno do banco de dados com base no seu ID quando bem sucedido")
+    void findById_RetornaAluno_ComBaseNoID_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoParaSalvar();
 
         Aluno alunoSalvo = this.alunoRepositorio.save(alunoParaSalvar);
@@ -64,7 +64,7 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Salva e atualiza dados do aluno no banco de dados quando bem sucedido")
+    @DisplayName("Salva e atualiza dados do Aluno no banco de dados quando bem sucedido")
     void replace_AtualizaAluno_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoParaSalvar();
         
@@ -82,8 +82,8 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Deleta aluno quando bem sucedido")
-    void delete_RemoveAluno_QuandoBemSucedido(){
+    @DisplayName("Deleta um Aluno quando bem sucedido")
+    void delete_RemoveAluno_ComBaseNoID_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoParaSalvar();
         
         Aluno alunoSalvo = this.alunoRepositorio.save(alunoParaSalvar);
@@ -96,8 +96,8 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Procura e retorna uma lista alunos baseando-se no nome ignorando maiusculas e minusculas quando bem sucedido")
-    void findByNameIgnoringCase_RetornaListaDeAlunos_QuandoBemSucedido(){
+    @DisplayName("Procura e retorna uma lista de Alunos quando bem sucedido com base em seu nome ignorando maiusculas e minusculas")
+    void findByNameIgnoringCase_RetornaListaDeAlunos_ComBaseNoNome_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoParaSalvar();
         
         Aluno alunoSalvo = this.alunoRepositorio.save(alunoParaSalvar);
@@ -110,7 +110,7 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Procura e retorna uma lista vazia de alunos quando nao encontrado")
+    @DisplayName("Procura e retorna uma lista vazia de Alunos quando nao encontrado")
     void findByNameIgnoringCase_RetornaListaVazia_QuandoAlunoNaoEncontrado(){
 
         List<Aluno> alunos = this.alunoRepositorio.findByNomeIgnoreCaseContaining("AAAAaaaaAAAAAaaa");
@@ -119,8 +119,8 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Procura e retorna uma lista de alunos ativos baseando-se no status ativo registrado no sistema quando bem sucedido")
-    void findByStatusAtivos(){
+    @DisplayName("Procura e retorna uma lista de Alunos ativos baseando-se no status ativo registrado no sistema quando bem sucedido")
+    void findByStatusAtivos_RetornaListaDeAlunos_ComBaseNoStatusAtivo_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoParaSalvar();
         
         this.alunoRepositorio.save(alunoParaSalvar);
@@ -131,8 +131,8 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Procura e retorna uma lista de alunos inativos baseando-se no status inativo registrado no sistema quando bem sucedido")
-    void findByStatusInativos(){
+    @DisplayName("Procura e retorna uma lista de Alunos inativos baseando-se no status inativo registrado no sistema quando bem sucedido")
+    void findByStatusInativos_RetornaListaDeAlunos_ComBaseNoStatusInativo_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoInativo();
         
         this.alunoRepositorio.save(alunoParaSalvar);
@@ -143,8 +143,8 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Procura e retorna uma lista de alunos trancados baseando-se no status trancado registrado no sistema quando bem sucedido")
-    void findByStatusTrancado(){
+    @DisplayName("Procura e retorna uma lista de Alunos trancados baseando-se no status trancado registrado no sistema quando bem sucedido")
+    void findByStatusTrancado_RetornaListaDeAlunos_ComBaseNoStatusTrancado_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoTrancado();
         
         this.alunoRepositorio.save(alunoParaSalvar);
@@ -155,8 +155,8 @@ public class AlunoRepositorioTest {
     }
 
     @Test
-    @DisplayName("Procura e retorna uma lista de alunos cancelados baseando-se no status cancelado registrado no sistema quando bem sucedido")
-    void findByStatusCancelado(){
+    @DisplayName("Procura e retorna uma lista de Alunos cancelados baseando-se no status cancelado registrado no sistema quando bem sucedido")
+    void findByStatusCancelado_RetornaListaDeAlunos_ComBaseNoStatusCancelado_QuandoBemSucedido(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoCancelado();
         
         this.alunoRepositorio.save(alunoParaSalvar);
