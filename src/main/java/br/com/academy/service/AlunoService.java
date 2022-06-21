@@ -29,12 +29,12 @@ public class AlunoService {
         alunoRepositorio.deleteById(findById(id).getId());
     }
 
-    public List<Aluno> findByStatusAtivos(){
-        return alunoRepositorio.findByStatusAtivos();
+    public List<Aluno> findByStatusAtivo(){
+        return alunoRepositorio.findByStatusAtivo();
     }
 
-    public List<Aluno> findByStatusInativos(){
-        return alunoRepositorio.findByStatusInativos();
+    public List<Aluno> findByStatusInativo(){
+        return alunoRepositorio.findByStatusInativo();
     }
 
     public List<Aluno> findByStatusTrancado(){
@@ -45,8 +45,8 @@ public class AlunoService {
         return alunoRepositorio.findByStatusCancelado();
     }
 
-    public List<Aluno> findByNomeContainingIgnoreCase(String nome){
-        return alunoRepositorio.findByNomeContainingIgnoreCase(nome);
+    public List<Aluno> findByNomeIgnoreCaseContaining(String nome){
+        return alunoRepositorio.findByNomeIgnoreCaseContaining(nome);
     }
 
     @Transactional

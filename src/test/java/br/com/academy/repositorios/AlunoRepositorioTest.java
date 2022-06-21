@@ -104,7 +104,7 @@ public class AlunoRepositorioTest {
         
         String nome = alunoSalvo.getNome();
 
-        List<Aluno> alunos = this.alunoRepositorio.findByNomeContainingIgnoreCase(nome);
+        List<Aluno> alunos = this.alunoRepositorio.findByNomeIgnoreCaseContaining(nome);
 
         Assertions.assertFalse(alunos.isEmpty());
     }
@@ -113,21 +113,57 @@ public class AlunoRepositorioTest {
     @DisplayName("Procura e retorna uma lista vazia de alunos quando nao encontrado")
     void findByNameIgnoringCase_RetornaListaVazia_QuandoAlunoNaoEncontrado(){
 
-        List<Aluno> alunos = this.alunoRepositorio.findByNomeContainingIgnoreCase("AAAAaaaaAAAAAaaa");
+        List<Aluno> alunos = this.alunoRepositorio.findByNomeIgnoreCaseContaining("AAAAaaaaAAAAAaaa");
 
         Assertions.assertTrue(alunos.isEmpty());
     }
 
     @Test
-    @DisplayName("Procura e retorna uma lista de alunos baseando-se em seu status ativo quando bem sucedido")
+    @DisplayName("Procura e retorna uma lista de alunos ativos baseando-se no status ativo registrado no sistema quando bem sucedido")
     void findByStatusAtivos(){
         Aluno alunoParaSalvar = AlunoCriador.CriaAlunoParaSalvar();
         
         this.alunoRepositorio.save(alunoParaSalvar);
 
-        List<Aluno> alunos = this.alunoRepositorio.findByStatusAtivos();
+        List<Aluno> alunos = this.alunoRepositorio.findByStatusAtivo();
 
         Assertions.assertEquals(alunos.get(0).getStatus(), Status.ATIVO);
+    }
+
+    @Test
+    @DisplayName("Procura e retorna uma lista de alunos inativos baseando-se no status inativo registrado no sistema quando bem sucedido")
+    void findByStatusInativos(){
+        Aluno alunoParaSalvar = AlunoCriador.CriaAlunoInativo();
+        
+        this.alunoRepositorio.save(alunoParaSalvar);
+
+        List<Aluno> alunos = this.alunoRepositorio.findByStatusInativo();
+
+        Assertions.assertEquals(alunos.get(0).getStatus(), Status.INATIVO);
+    }
+
+    @Test
+    @DisplayName("Procura e retorna uma lista de alunos trancados baseando-se no status trancado registrado no sistema quando bem sucedido")
+    void findByStatusTrancado(){
+        Aluno alunoParaSalvar = AlunoCriador.CriaAlunoTrancado();
+        
+        this.alunoRepositorio.save(alunoParaSalvar);
+
+        List<Aluno> alunos = this.alunoRepositorio.findByStatusTrancado();
+
+        Assertions.assertEquals(alunos.get(0).getStatus(), Status.TRANCADO);
+    }
+
+    @Test
+    @DisplayName("Procura e retorna uma lista de alunos cancelados baseando-se no status cancelado registrado no sistema quando bem sucedido")
+    void findByStatusCancelado(){
+        Aluno alunoParaSalvar = AlunoCriador.CriaAlunoCancelado();
+        
+        this.alunoRepositorio.save(alunoParaSalvar);
+
+        List<Aluno> alunos = this.alunoRepositorio.findByStatusCancelado();
+
+        Assertions.assertEquals(alunos.get(0).getStatus(), Status.CANCELADO);
     }
 
 }

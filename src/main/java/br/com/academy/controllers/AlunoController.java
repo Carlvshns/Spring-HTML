@@ -105,7 +105,7 @@ public class AlunoController {
 	public ModelAndView listaAlunosAtivos() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Aluno/alunos-ativos");
-		mv.addObject("alunosAtivos", alunoService.findByStatusAtivos());
+		mv.addObject("alunosAtivos", alunoService.findByStatusAtivo());
 		new ResponseEntity<>(HttpStatus.OK);
 		return mv;
 	}
@@ -113,7 +113,7 @@ public class AlunoController {
 	public ModelAndView listaAlunosInativos() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Aluno/alunos-inativos");
-		mv.addObject("alunosInativos", alunoService.findByStatusInativos());
+		mv.addObject("alunosInativos", alunoService.findByStatusInativo());
 		new ResponseEntity<>(HttpStatus.OK);
 		return mv;
 	}
@@ -140,7 +140,7 @@ public class AlunoController {
 		if(nome == null || nome.trim().isEmpty()) {
 			listAlunos = alunoService.findAll();
 		}else {
-			listAlunos = alunoService.findByNomeContainingIgnoreCase(nome);
+			listAlunos = alunoService.findByNomeIgnoreCaseContaining(nome);
 		}
 		mv.addObject("listaDeAlunos", listAlunos);
 		mv.setViewName("Aluno/pesquisa-resultado");

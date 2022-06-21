@@ -12,10 +12,10 @@ import br.com.academy.model.Aluno;
 public interface AlunoRepositorio extends JpaRepository<Aluno, Integer>{
 	
 	@Query("select j from Aluno j where j.status = 'ATIVO' ")
-	public List<Aluno> findByStatusAtivos();
+	public List<Aluno> findByStatusAtivo();
 	
 	@Query("select j from Aluno j where j.status = 'INATIVO' ")
-	public List<Aluno> findByStatusInativos();
+	public List<Aluno> findByStatusInativo();
 	
 	@Query("select j from Aluno j where j.status = 'CANCELADO' ")
 	public List<Aluno> findByStatusCancelado();
@@ -23,5 +23,5 @@ public interface AlunoRepositorio extends JpaRepository<Aluno, Integer>{
 	@Query("select j from Aluno j where j.status = 'TRANCADO' ")
 	public List<Aluno> findByStatusTrancado();
 	
-	public List<Aluno> findByNomeContainingIgnoreCase(String nome);
+	public List<Aluno> findByNomeIgnoreCaseContaining(String nome);
 }

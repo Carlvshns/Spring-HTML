@@ -21,10 +21,38 @@ public class AlunoCriador {
         return aluno;
     }
 
-    public static Aluno CriaAlunoParaAtualizar(){
+    public static Aluno CriaAlunoInativo(){
         Aluno aluno = new Aluno();
         Curso curso = Curso.PROGRAMACAO;
-        Status status = Status.ATIVO;
+        Status status = Status.INATIVO;
+        Turno turno = Turno.MATUTINO;
+        aluno.setId(1);
+        aluno.setNome("Edward");
+        aluno.setCurso(curso);
+        aluno.setMatricula("ACA1234");
+        aluno.setStatus(status);
+        aluno.setTurno(turno);
+        return aluno;
+    }
+
+    public static Aluno CriaAlunoTrancado(){
+        Aluno aluno = new Aluno();
+        Curso curso = Curso.PROGRAMACAO;
+        Status status = Status.TRANCADO;
+        Turno turno = Turno.MATUTINO;
+        aluno.setId(1);
+        aluno.setNome("Edward");
+        aluno.setCurso(curso);
+        aluno.setMatricula("ACA1234");
+        aluno.setStatus(status);
+        aluno.setTurno(turno);
+        return aluno;
+    }
+
+    public static Aluno CriaAlunoCancelado(){
+        Aluno aluno = new Aluno();
+        Curso curso = Curso.PROGRAMACAO;
+        Status status = Status.CANCELADO;
         Turno turno = Turno.MATUTINO;
         aluno.setId(1);
         aluno.setNome("Edward");
