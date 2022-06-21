@@ -117,19 +117,19 @@ public class AlunoController {
 		new ResponseEntity<>(HttpStatus.OK);
 		return mv;
 	}
-	@GetMapping("alunos-cancelados")
-	public ModelAndView listaAlunosCancelados() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("Aluno/alunos-cancelados");
-		mv.addObject("alunosCancelados", alunoService.findByStatusCancelado());
-		new ResponseEntity<>(HttpStatus.OK);
-		return mv;
-	}
 	@GetMapping("alunos-trancados")
 	public ModelAndView listaAlunosTrancados() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Aluno/alunos-trancados");
 		mv.addObject("alunosTrancados", alunoService.findByStatusTrancado());
+		new ResponseEntity<>(HttpStatus.OK);
+		return mv;
+	}
+	@GetMapping("alunos-cancelados")
+	public ModelAndView listaAlunosCancelados() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Aluno/alunos-cancelados");
+		mv.addObject("alunosCancelados", alunoService.findByStatusCancelado());
 		new ResponseEntity<>(HttpStatus.OK);
 		return mv;
 	}

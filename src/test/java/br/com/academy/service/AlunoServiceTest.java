@@ -180,4 +180,12 @@ public class AlunoServiceTest {
 
         Assertions.assertEquals(aluno.getNome(), listaAlunos.get(0).getNome());
     }
+
+    @Test
+    @DisplayName("AlunoValidacao retorna um boolean para comfirmar se é um Aluno valido ou nao")
+    void AlunoValidacao_RetornaTrueOuFalse(){
+        Aluno aluno = AlunoCriador.CriaAlunoParaSalvar();
+
+        Assertions.assertTrue(alunoService.AlunoValidacao(aluno));
+    }
 }
