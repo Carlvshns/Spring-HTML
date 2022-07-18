@@ -7,11 +7,12 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import br.com.academy.Enums.Curso;
 import br.com.academy.Enums.Status;
 import br.com.academy.Enums.Turno;
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 public class Aluno{
@@ -22,28 +23,35 @@ public class Aluno{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@ApiModelProperty(notes = "ID do Aluno", example = "1", required = true)
 	private Integer id;
 	
 	@Column(name = "nome")
-	@NotEmpty(message = "O campo status nao pode ser nulo")
+	@NotNull(message = "O campo nome nao pode ser nulo")
+	@ApiModelProperty(notes = "Nome do Aluno", example = "Carlos Eduardo", required = true)
 	private String nome;
 	
 	@Column(name = "curso")
 	@Enumerated(EnumType.STRING)
+	@NotNull(message = "O campo curso nao pode ser nulo")
+	@ApiModelProperty(notes = "Curso que o Aluno esta matriculado", example = "Programacao", required = true)
 	private Curso curso;
 	
 	@Column(name= "matricula")
-	@NotEmpty(message ="Clique no botão gerar!")
+	@NotNull(message ="Clique no botão gerar!")
+	@ApiModelProperty(notes = "Codigo da Matricula", example = "ACA113", required = true)
 	private String matricula;
 	
 	@Column(name = "status")
 	@Enumerated(EnumType.STRING)
-	@NotEmpty(message = "O campo status nao pode ser nulo")
+	@NotNull(message = "O campo status nao pode ser nulo")
+	@ApiModelProperty(notes = "Status do Aluno na entidade", example = "Ativo", required = true)
 	private Status status;
 	
 	@Column(name = "turno")
 	@Enumerated(EnumType.STRING)
-	@NotEmpty(message = "O campo turno nao pode ser nulo")
+	@NotNull(message = "O campo turno nao pode ser nulo")
+	@ApiModelProperty(notes = "Turno que o Aluno frequenta", example = "Matutino", required = true)
 	private Turno turno;
 
 	public Integer getId() {
